@@ -11,7 +11,7 @@ class TodoList {
   TodoList(
       {required this.title,
       required this.dateAdded,
-      this.tasks = const []});
+      List<Task>? tasks}) : tasks = tasks ?? [];
 
   Map<String, dynamic> toJson() => {
         'title': title,
@@ -24,7 +24,7 @@ class TodoList {
     dateAdded: DateTime.parse(json['dateAdded']),
     tasks: json['tasks'] != null
       ? (json['tasks'] as List).map((taskJson) => Task.fromJson(taskJson)).toList()
-      : [],
+      : null,
   );
 }
 

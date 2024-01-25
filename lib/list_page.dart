@@ -108,7 +108,6 @@ class _ShowListPageState extends State<ShowListPage> {
 
   @override
   void dispose() {
-    _controller.dispose();
     super.dispose();
   }
 }
